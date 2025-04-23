@@ -5,7 +5,7 @@
 Profesor: Carlos Orellana
 Estudiantes:
  - Gustavo Santana
- -
+ - Matias Gallardo
  -
  -
  -

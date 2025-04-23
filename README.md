@@ -2,7 +2,7 @@
 
 ---
 
-Profesor: Carlos Orellana
+Profesor: Carlos Orellana Soto
 Estudiantes:
  - Gustavo Santana
  - Benjamín Gonzalez

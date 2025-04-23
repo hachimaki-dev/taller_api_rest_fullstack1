@@ -2,10 +2,11 @@
 
 ---
 
-Profesor: Carlos Orellana
+Profesor: Carlos Orellana Soto
 Estudiantes:
  - Gustavo Santana
  - Diego Aravena
+ - Benjamín Gonzalez
  -
  -
  -

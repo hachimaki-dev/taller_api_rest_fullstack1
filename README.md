@@ -5,7 +5,8 @@
 Profesor: Carlos Orellana Soto
 Estudiantes:
  - Gustavo Santana
- - Benjamín Gonzalez
+ - Benjamín Gonzalez 
+ - Diego Aravena
  -
  -
  -

@@ -23,4 +23,15 @@ public class ProductController {
         return new Product(id, "mause",2.000);
 
     }
+
+    @GetMapping("/api/productos/filtrar")
+    public String filtrarProduct(){
+        return "";
+    }
+
+
+  
+
+
+
 }

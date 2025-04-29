@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.profecarlos.tallerapirest.restapi.model.Product;
+
 @RestController
 @RequestMapping("/api/v1")
 public class ProductController {
@@ -16,9 +18,9 @@ public class ProductController {
 
     }
     @GetMapping("/product/{id}")
-    public String getProduct(@PathVariable long id){
+    public Product  getProduct(@PathVariable long id){
 
-        return "haz obtenido el producto con el id"+id;
+        return new Product(id, "mause",2.000);
 
     }
 }

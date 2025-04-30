@@ -5,12 +5,15 @@ public class Product {
     private Long id;
     private String nombre;
     private double precio;
+    private String categoria;
+
 
     //Constructor
-    public Product(Long id, String nombre, double precio) {
+    public Product(Long id, String nombre, double precio, String categoria) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
+        this.categoria = categoria;
     }
     
     //Getters & Setters
@@ -31,6 +34,14 @@ public class Product {
     }
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
     
     

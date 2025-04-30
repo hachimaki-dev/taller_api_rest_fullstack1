@@ -35,13 +35,14 @@ public class ProductoController {
         @RequestParam(defaultValue = "asc") String orden,
         @RequestParam(defaultValue = "10") int limite
     ){
-
+        //Si ordenarPor no esta en la lista retornar error
         if (ordenarPor.equals("nombre") || ordenarPor.equals("precio") || ordenarPor.equals("popularidad")) {
-            return "Termino: "+ termino + " OrdenarPor: "+ ordenarPor + " Orden"+ orden +" Limite: "+limite;
+            return "Termino: "+ termino + "\nOrdenarPor: "+ ordenarPor + "\nOrden: "+ orden +"\nLimite: "+limite;
         } else {
             return "Esta categoria no existe";
         }
         
     }
+    //Ej 5
 
 }

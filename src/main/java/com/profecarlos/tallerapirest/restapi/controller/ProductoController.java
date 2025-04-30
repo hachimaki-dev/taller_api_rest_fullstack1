@@ -29,8 +29,15 @@ public class ProductoController {
     }
 
     @GetMapping("/api/productos/buscar")
-    public String buscarProducto (@RequestParam String termino){
-        return "";
+    public String buscarProducto (@RequestParam String termino,
+                                  @RequestParam (defaultValue="nombre") String ordenarPor,
+                                  @RequestParam(defaultValue = "asc") String orden,
+                                  @RequestParam(defaultValue = "10") int limite){
+        return "Búsqueda de productos con: " +
+                "término='" + termino + "'" +
+                ", ordenados por=" + ordenarPor +
+                ", orden=" + orden +
+                ", límite de resultados=" + limite;
     }
     
 }

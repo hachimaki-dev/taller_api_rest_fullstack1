@@ -29,7 +29,7 @@ public class ProductoController {
     }
 
     @GetMapping("/api/productos/buscar")
-    public String buscarProducto (String termino){
+    public String buscarProducto (@RequestParam String termino){
         return "";
     }
     

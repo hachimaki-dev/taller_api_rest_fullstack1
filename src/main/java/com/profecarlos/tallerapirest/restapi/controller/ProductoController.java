@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
      }
     
      @GetMapping("/api/productos")
-     public String ListarProductos(){
+     public String listarProductos(){
          return "Se están listando todos los productos";
      }
      @GetMapping("api/productos/{id}")
@@ -33,6 +33,12 @@ import org.springframework.web.bind.annotation.RestController;
         );
      }
      @GetMapping("/api/productos/buscar")
-     public String busqueda
+     public String buscarProductos(
+        @RequestParam(required = true) String termino, @RequestParam(defaultValue = "nombre") String ordenarPor,
+        @RequestParam(defaultValue = "asc") String orden, @RequestParam(defaultValue = "10") int limite){
+        return ("Termino buscado: " + termino + ", Ordenado por: " + ordenarPor + ", Orden: " + orden + ", Limite: " + limite)
+        ;
+     }
 
+ 
  }

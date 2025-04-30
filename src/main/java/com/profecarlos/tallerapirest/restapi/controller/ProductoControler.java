@@ -35,11 +35,13 @@ public class ProductoControler {
 
     //Ejercicio 4
     @GetMapping("/buscar")
-    public String buscarCategorias(@RequestParam(required = true) String termino,
-                                   @RequestParam(defaultValue = "nombre") String ordenarPo,
-                                   @RequestParam  String a){
+    public String buscarProductos(@RequestParam() String termino,
+                                   @RequestParam(defaultValue = "nombre") String ordenarPor,
+                                   @RequestParam(defaultValue = "asc") String orden,
+                                   @RequestParam(defaultValue = "10") int limite){
 
-        return null;
+        return "Buscando productos con término: " + termino + ", ordenando por: " + ordenarPor + ", en orden: " + orden + ", mostrando máximo: " + limite + " resultados.";
+
     }
 
 }

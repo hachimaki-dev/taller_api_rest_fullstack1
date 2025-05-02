@@ -41,6 +41,15 @@ public class ProductController {
 
         }
 
+        @GetMapping("api/productos/{productoId}/reseñas")
+public String listarReseñasDeProducto(
+@PathVariable Long productoId,
+@RequestParam(defaultValue = "1") int calificacionMin,
+@RequestParam(defaultValue = "5") int calificacionMax,
+@RequestParam(defaultValue = "false") boolean mostrarSoloVerificadas) {
 
-
+    return "Reseñas del producto ID: " + productoId +
+    ", con calificacion entre " + calificacionMin + " y " + calificacionMax +
+    (mostrarSoloVerificadas ? ", mostrando solo reseñas verificadas" : ", mostando todas las reseñas");
+}
 }

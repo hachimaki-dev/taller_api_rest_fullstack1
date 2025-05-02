@@ -18,7 +18,7 @@ public class ProductoController {
 
     @GetMapping("/api/productos/{id}")
     public Producto getProduct(@PathVariable Long id) {
-        return new Producto(id,"producto",5000);
+        return new Producto(id,"producto","electronico",5000,"Es un objeto electronico");
     }
     
     @GetMapping("/api/productos/filtrar")

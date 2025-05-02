@@ -14,7 +14,7 @@ public class ReseñaController {
 
         String mostrarSoloVerificadasV;
 
-        if (mostrarSoloVerificadas == true) {
+        if (mostrarSoloVerificadas == true) { 
 
             mostrarSoloVerificadasV = "Mostrando reseñas verificadas";
         } else {

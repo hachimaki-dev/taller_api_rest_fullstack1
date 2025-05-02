@@ -12,13 +12,7 @@ import com.profecarlos.tallerapirest.restapi.model.Product;
 public class ProductController {
 
     @PostMapping("product")
-    public Product insertProduct(
-            @RequestBody int id,
-            @RequestBody String nombre,
-            @RequestBody String descripcion,
-            @RequestBody double precio,
-            @RequestBody String categoria) {
-        Product producto = new Product(id, nombre, descripcion, precio, categoria);
+    public Product insertProduct(@RequestBody Product producto) {
         return producto;
     }
 

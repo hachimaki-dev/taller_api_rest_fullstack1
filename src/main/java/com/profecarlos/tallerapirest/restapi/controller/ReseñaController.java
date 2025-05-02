@@ -2,8 +2,6 @@ package com.profecarlos.tallerapirest.restapi.controller;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Objects;
-
 @RestController
 public class ReseñaController {
 
@@ -12,12 +10,22 @@ public class ReseñaController {
     public String ProductoReseña(@PathVariable int productoId,
                                  @RequestParam (defaultValue = "1") int calificacionMin,
                                  @RequestParam (defaultValue = "5") int calificacionMax,
-                                 @RequestParam (defaultValue = "false") String mostrarSoloverificadas) {
+                                 @RequestParam (defaultValue = "false") boolean mostrarSoloVerificadas) {
 
-        return "ID producto: " + productoId +
-                ", calificación mínima: " + calificacionMin +
-                ", calificación máxima: " + calificacionMax +
-                ", solo verificadas: " + (Objects.equals(mostrarSoloverificadas, "true") ? "true" : "false");
+        String mostrarSoloVerificadasV;
 
+        if (mostrarSoloVerificadas == true) {
+
+            mostrarSoloVerificadasV = "Mostrando reseñas verificadas";
+        } else {
+
+            mostrarSoloVerificadasV = "Mostrando todo tipo de reseñas";
+
+        }
+
+        return "ID Producto: " + productoId +
+                ", Calificación mínima: " + calificacionMin +
+                ", Calificación máxima: " + calificacionMax + 
+                " " + mostrarSoloVerificadasV;
     }
 }

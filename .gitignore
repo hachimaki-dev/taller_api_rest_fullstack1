@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+...existing code...
+### VS Code ###
+.vscode/
+
+# Propiedades de configuración sensibles
+src/main/resources/application.properties

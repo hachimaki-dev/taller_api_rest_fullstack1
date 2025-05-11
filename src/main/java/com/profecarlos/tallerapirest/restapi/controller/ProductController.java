@@ -1,15 +1,15 @@
 package com.profecarlos.tallerapirest.restapi.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.profecarlos.tallerapirest.restapi.model.Product;
+import com.profecarlos.tallerapirest.restapi.repository.ProductRepository;
 
 
 
@@ -17,19 +17,14 @@ import com.profecarlos.tallerapirest.restapi.model.Product;
 @RequestMapping("/api/v1")
 public class ProductController {
 
-    private List<Product> productList = new ArrayList<>();
-
+    @Autowired
+    private ProductRepository productRepository;
+    //Esto sirve para guardar el producto en la base de datos
     @PostMapping("product")
-    public Product insertProduct(@RequestBody Product producto) {
-        int newId = productList.isEmpty() ? 1 : productList.get(productList.size() - 1).getId() + 1;
-        producto.setId(newId);
-        productList.add(producto);
-        return producto;
+    public ResponseEntity<Product> insertProduct(@RequestBody Product producto) {
+        Product savedProduct = productRepository.save(producto);
+        return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
     }
 
-    @GetMapping("products")
-    public List<Product> getAllProducts(){
-        return productList;
-    }
-    
+
 }

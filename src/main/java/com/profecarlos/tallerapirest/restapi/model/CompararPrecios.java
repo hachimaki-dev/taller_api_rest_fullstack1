@@ -1,20 +1,35 @@
 package com.profecarlos.tallerapirest.restapi.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "")
 public class CompararPrecios {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name= "nombre_producto")
+    @Column(nullable= false)
     private String nombre_producto;
+
+    @Column(nullable= false)
     private String marca_producto;
+
+    @Column(nullable= false)
     private int cantidad_unidad_medida;
+
+    @Column(nullable= false)
     private String unidad_medida_producto;
+
+    @Column(nullable= false)
     private float precio_producto;
+
+    @Column(nullable= false)
     private String nombre_supermercado;
 
     public CompararPrecios(){

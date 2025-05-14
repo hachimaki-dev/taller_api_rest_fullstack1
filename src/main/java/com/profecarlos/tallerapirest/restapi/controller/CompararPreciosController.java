@@ -16,11 +16,11 @@ import com.profecarlos.tallerapirest.restapi.repository.CompararPreciosRepositor
 public class CompararPreciosController {
 
     @Autowired
-    private CompararPreciosRepository compararPreciosRepository;
+    private CompararPreciosRepository juanito;
 
-    @PostMapping("CompararPreciosHost")
+    @PostMapping("CompararPreciosPost")
     public ResponseEntity<CompararPrecios> insertarDatos(@RequestBody CompararPrecios compararPrecios){
-        CompararPrecios guardarDatos = compararPreciosRepository.save(compararPrecios);
+        CompararPrecios guardarDatos = juanito.save(compararPrecios);
         return new ResponseEntity<>(guardarDatos, HttpStatus.CREATED);
     }
     

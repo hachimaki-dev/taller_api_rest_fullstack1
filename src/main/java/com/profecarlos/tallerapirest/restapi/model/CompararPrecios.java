@@ -31,9 +31,7 @@ public class CompararPrecios {
    @Column(nullable = false)
    private String nombre_supermercado;
 
-
     public CompararPrecios(){
-        
     }
 
    public CompararPrecios(int id, String nombre_producto, String marca_producto, int cantidad_unidad_medida,
@@ -102,8 +100,4 @@ public class CompararPrecios {
    public void setNombre_supermercado(String nombre_supermercado) {
     this.nombre_supermercado = nombre_supermercado;
    }
-
-   
-   
-
 }

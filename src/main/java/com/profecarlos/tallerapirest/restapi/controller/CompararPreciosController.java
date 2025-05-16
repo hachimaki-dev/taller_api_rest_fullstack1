@@ -18,7 +18,7 @@ public class CompararPreciosController {
     @Autowired
     private CompararPreciosRepository juanito;
 
-    @PostMapping("CompararPreciosPost")
+    @PostMapping("compararPreciosPost")
     public ResponseEntity<CompararPrecios> insertarDatos(@RequestBody CompararPrecios compararPrecios){
         CompararPrecios guardarDatos = juanito.save(compararPrecios);
         return new ResponseEntity<>(guardarDatos, HttpStatus.CREATED);

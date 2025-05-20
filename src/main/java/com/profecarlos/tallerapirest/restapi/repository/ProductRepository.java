@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.profecarlos.tallerapirest.restapi.model.Product;
 
-public interface ProductRepository extends JpaRepository<Product, Integer>{
+public interface ProductRepository extends JpaRepository<Product, Long>{
     
 
     // Este metodo no es de JPA, si no uno personalizado creado por nosotros

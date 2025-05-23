@@ -27,7 +27,7 @@ public class CatalogoController {
     }
 
     // Métodos adicionales para completar el CRUD
-    @GetMapping("juego/{id}")
+    @GetMapping("juegos/{id}")
     public ResponseEntity<Juego> getProductById(@PathVariable("id") int id) {
         return juegoRepository.findById(id)
                 .map(product -> new ResponseEntity<>(product, HttpStatus.OK))

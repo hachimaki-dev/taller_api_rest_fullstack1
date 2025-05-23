@@ -22,7 +22,6 @@ public class Product {
     private String categoria;
 
     @Column(nullable = false)
-
     private double precio;
 
     @Column(length =  1000)

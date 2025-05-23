@@ -8,8 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "products")
-public class Product {
+@Table(name = "juegos")
+public class Juego {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,17 +22,16 @@ public class Product {
     private String categoria;
 
     @Column(nullable = false)
-
     private double precio;
 
     @Column(length =  1000)
     private String descripcion;
 
-    public Product(){
+    public Juego(){
 
     }
 
-    public Product(int id, String nombre, String descripcion, double precio, String categoria) {
+    public Juego(int id, String nombre, String descripcion, double precio, String categoria) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;

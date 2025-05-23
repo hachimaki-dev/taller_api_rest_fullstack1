@@ -14,51 +14,51 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.profecarlos.tallerapirest.restapi.model.Product;
-import com.profecarlos.tallerapirest.restapi.repository.ProductRepository;
+import com.profecarlos.tallerapirest.restapi.model.Juego;
+import com.profecarlos.tallerapirest.restapi.repository.JuegoRepository;
 
 @RestController
 @RequestMapping("/api/v1")
-public class ProductController {
+public class JuegoController {
     // Inyección del repositorio
     @Autowired
-    private ProductRepository productRepository;
+    private JuegoRepository productRepository;
 
     @PostMapping("product")
-    public ResponseEntity<Product> insertProduct(@RequestBody Product producto) {
-        Product savedProduct = productRepository.save(producto);
+    public ResponseEntity<Juego> insertProduct(@RequestBody Juego producto) {
+        Juego savedProduct = productRepository.save(producto);
         return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
     }
 
     @GetMapping("products")
-    public ResponseEntity<List<Product>> getAllProducts() {
-        List<Product> products = productRepository.findAll();
+    public ResponseEntity<List<Juego>> getAllProducts() {
+        List<Juego> products = productRepository.findAll();
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
     // Métodos adicionales para completar el CRUD
     @GetMapping("product/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable("id") int id) {
+    public ResponseEntity<Juego> getProductById(@PathVariable("id") int id) {
         return productRepository.findById(id)
                 .map(product -> new ResponseEntity<>(product, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("products/categoria/{categoria}")
-    public ResponseEntity<List<Product>> getProductsByCategoria(@PathVariable String categoria) {
-        List<Product> products = productRepository.findByCategoria(categoria);
+    public ResponseEntity<List<Juego>> getProductsByCategoria(@PathVariable String categoria) {
+        List<Juego> products = productRepository.findByCategoria(categoria);
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
     @PutMapping("product/{id}")
-    public ResponseEntity<Product> updateProduct(@PathVariable("id") int id, @RequestBody Product productoActualizado) {
+    public ResponseEntity<Juego> updateProduct(@PathVariable("id") int id, @RequestBody Juego productoActualizado) {
         return productRepository.findById(id)
                 .map(productoExistente -> {
                     productoExistente.setNombre(productoActualizado.getNombre());
                     productoExistente.setCategoria(productoActualizado.getCategoria());
                     productoExistente.setPrecio(productoActualizado.getPrecio());
                     productoExistente.setDescripcion(productoActualizado.getDescripcion());
-                    Product updated = productRepository.save(productoExistente);
+                    Juego updated = productRepository.save(productoExistente);
                     return new ResponseEntity<>(updated, HttpStatus.OK);
                 })
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));

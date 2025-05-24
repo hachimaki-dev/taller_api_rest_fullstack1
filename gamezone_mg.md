@@ -203,3 +203,11 @@ public class UsuarioController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 }
+
+//Para Crear usuario es "Post": http://localhost:8080/api/v1/usuarios
+//Para actualizar es "Put":http://localhost:8080/api/v1/usuarios/(Aqui va el id )
+//Para eliminar es "Delete": http://localhost:8080/api/v1/usuarios/(Aqui va el id que quieres borrar)
+//Para ver todo los Usuarios Creado es "Get": http://localhost:8080/api/v1/usuarios
+
+//Para ver si el al Registrar el correo esta bien "Get" : http://localhost:8080/api/v1/usuario/registrar?nombre=juan&email=juan@email.com&password=1234
+//para ver si inicio sesion correctamente "Get" : http://localhost:8080/api/v1/usuario/login?email=juan@email.com&password=1234

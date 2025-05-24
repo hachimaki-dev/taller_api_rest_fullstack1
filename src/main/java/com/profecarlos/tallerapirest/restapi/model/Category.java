@@ -18,4 +18,29 @@ public class Category {
     @Column(nullable = false)
     private String nombre;
 
+    public Category(int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
+    public Category() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    
 }
